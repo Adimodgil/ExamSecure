@@ -1,0 +1,17 @@
+# Build output
+target/
+*.class
+*.war
+
+# Eclipse
+.settings/
+.classpath
+.project
+.metadata/
+
+# Secrets - never commit your real DB password
+src/main/resources/db.properties
+
+# OS / IDE
+.DS_Store
+Thumbs.db

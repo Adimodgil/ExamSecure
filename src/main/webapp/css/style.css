@@ -1,0 +1,618 @@
+/* =========================
+   COMMON
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   LOGIN
+========================= */
+body.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#312e81,#4f46e5,#7c3aed,#9333ea);
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.brand {
+    text-align: center;
+    color: white;
+    margin-bottom: 22px;
+}
+
+.brand-icon {
+    width: 55px;
+    height: 55px;
+    margin: auto auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #ffffff25;
+    font-size: 25px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.brand h1 span {
+    color: #ddd6fe;
+}
+
+.brand p {
+    margin: 6px 0;
+    color: #ffffffc7;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 470px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px #0004;
+}
+
+.login-heading {
+    text-align: center;
+}
+
+.login-heading h2 {
+    margin: 0;
+}
+
+.login-heading p {
+    color: #6b7280;
+}
+
+.role-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.role-card {
+    padding: 13px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+}
+
+.role-card.active {
+    border-color: #6366f1;
+    background: #f5f3ff;
+}
+
+.role-icon {
+    font-size: 20px;
+}
+
+.role-card strong,
+.role-card small {
+    display: block;
+}
+
+.role-card small {
+    color: #6b7280;
+}
+
+.selected-role {
+    margin: 15px 0;
+    padding: 9px;
+    text-align: center;
+    border-radius: 8px;
+    background: #f5f3ff;
+    color: #5b21b6;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label,
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.input-group input,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    outline: none;
+}
+
+.input-group input:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px #6366f120;
+}
+
+.login-button,
+.register-button,
+.create-button {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#4f46e5,#7c3aed);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 18px;
+    color: #6b7280;
+}
+
+.register-link a,
+.register-footer a {
+    color: #5b21b6;
+    font-weight: 700;
+}
+
+.message,
+.register-error {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.success-message {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.error-message,
+.register-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* =========================
+   DASHBOARDS
+========================= */
+body.teacher-dashboard,
+body.student-dashboard {
+    min-height: 100vh;
+    background: #f5f7fc;
+    color: #1f2937;
+}
+
+.dashboard-nav,
+.student-nav {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-brand,
+.student-brand {
+    font-size: 22px;
+    font-weight: 800;
+    color: #4f46e5;
+}
+
+.nav-user,
+.student-user {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-user a,
+.student-user a {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.teacher-container,
+.student-container {
+    width: 86%;
+    max-width: 1180px;
+    margin: auto;
+    padding: 40px 0 60px;
+}
+
+.dashboard-welcome h1,
+.student-welcome h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.dashboard-welcome p,
+.student-welcome p {
+    color: #6b7280;
+}
+
+.eyebrow,
+.student-eyebrow {
+    color: #6366f1 !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.dashboard-stats,
+.student-stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.stat-card,
+.student-stat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0000000d;
+}
+
+.stat-icon,
+.student-stat-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #ede9fe;
+    font-size: 20px;
+}
+
+.stat-card strong,
+.student-stat strong {
+    display: block;
+    font-size: 20px;
+}
+
+.stat-card span,
+.student-stat span {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+/* ACTIONS */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}
+
+.action-card {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    color: #1f2937;
+}
+
+.action-card:hover,
+.exam-card:hover,
+.student-exam-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px #4f46e520;
+}
+
+.primary-action {
+    background: #f5f3ff;
+}
+
+.action-icon {
+    font-size: 22px;
+}
+
+.action-card h3 {
+    margin: 0;
+}
+
+.action-card p {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+/* EXAMS */
+.exam-grid,
+.student-exam-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+}
+
+.exam-card,
+.student-exam-card {
+    padding: 22px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    transition: .2s;
+}
+
+.exam-card h3,
+.student-exam-card h3 {
+    margin: 12px 0 5px;
+}
+
+.exam-description,
+.student-exam-description {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.exam-info,
+.student-exam-details {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.exam-info span,
+.student-exam-details span {
+    padding: 7px 9px;
+    border-radius: 8px;
+    background: #f5f3ff;
+    color: #5b21b6;
+    font-size: 11px;
+}
+
+.start-exam-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    margin-top: 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#4f46e5,#7c3aed);
+    color: white;
+    font-weight: 700;
+}
+
+/* =========================
+   CREATE EXAM
+========================= */
+.create-exam-page {
+    min-height: 100vh;
+    background: #f6f7ff;
+}
+
+.create-exam-container {
+    width: min(950px,92%);
+    margin: auto;
+    padding: 40px 0;
+}
+
+.create-exam-header {
+    margin-bottom: 25px;
+}
+
+.create-exam-header h1 {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.create-exam-header p {
+    color: #6b7280;
+}
+
+.create-exam-form {
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px #231f4b12;
+}
+
+.form-section {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section-title {
+    margin-bottom: 20px;
+}
+
+.form-section-title h2 {
+    margin: 0;
+}
+
+.form-section-title p {
+    color: #888;
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.create-exam-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.cancel-button {
+    padding: 13px 22px;
+    border-radius: 10px;
+    background: #eeeef5;
+    color: #555;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:800px) {
+    .dashboard-stats,
+    .student-stats,
+    .action-grid,
+    .exam-grid,
+    .student-exam-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-nav,
+    .student-nav {
+        padding: 0 20px;
+    }
+
+    .teacher-container,
+    .student-container {
+        width: calc(100% - 40px);
+    }
+}
+
+/* =========================
+   REGISTER PAGES (student + teacher)
+========================= */
+body.register-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#312e81,#4f46e5,#7c3aed,#9333ea);
+}
+
+.register-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.register-brand {
+    text-align: center;
+    color: white;
+    margin-bottom: 22px;
+}
+
+.brand-name {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.brand-name span {
+    color: #ddd6fe;
+}
+
+.register-brand p {
+    margin: 6px 0;
+    color: #ffffffc7;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 470px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px #0004;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #ede9fe;
+    color: #6d28d9;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.register-header h1 {
+    margin: 14px 0 6px;
+    font-size: 28px;
+    color: #1f2937;
+}
+
+.register-header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.register-form {
+    margin-top: 10px;
+}
+
+.register-form .form-group {
+    margin-bottom: 16px;
+}
+
+.register-footer {
+    margin-top: 22px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.register-footer a {
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.secure-note {
+    margin-top: 20px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 12px;
+    background: #f5f3ff;
+    color: #5b21b6;
+    font-size: 14px;
+}
+
+.register-bottom {
+    margin-top: 22px;
+    color: #ffffffb0;
+    font-size: 14px;
+    text-align: center;
+}
